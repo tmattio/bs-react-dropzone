@@ -1,0 +1,25 @@
+{
+  "name": "bs-react-dropzone",
+  "version": "0.1.0",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react",
+    "bs-webapi"
+  ],
+  "warnings": {
+    "error": "+101"
+  },
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
+  "namespace": false,
+  "refmt": 3
+}
