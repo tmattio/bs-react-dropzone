@@ -1,5 +1,5 @@
 [@bs.module "react-dropzone"]
-external reactClass : ReasonReact.reactClass = "default";
+external reactClass: ReasonReact.reactClass = "default";
 
 type file = {
   .
@@ -13,7 +13,7 @@ type file = {
 };
 
 [@bs.obj]
-external makeProps :
+external makeProps:
   (
     ~accept: array(string)=?,
     ~disableClick: bool=?,
@@ -87,22 +87,11 @@ let make =
     ~props=
       makeProps(
         ~accept=?Js.Option.map((. a) => Array.of_list(a), accept),
-        ~disableClick=?
-          Js.Option.map((. b) => Js.Boolean.to_js_boolean(b), disableClick),
-        ~disabled=?
-          Js.Option.map((. b) => Js.Boolean.to_js_boolean(b), disabled),
-        ~disablePreview=?
-          Js.Option.map(
-            (. b) => Js.Boolean.to_js_boolean(b),
-            disablePreview,
-          ),
-        ~preventDropOnDocument=?
-          Js.Option.map(
-            (. b) => Js.Boolean.to_js_boolean(b),
-            preventDropOnDocument,
-          ),
-        ~multiple=?
-          Js.Option.map((. b) => Js.Boolean.to_js_boolean(b), multiple),
+        ~disableClick?,
+        ~disabled?,
+        ~disablePreview?,
+        ~preventDropOnDocument?,
+        ~multiple?,
         ~name?,
         ~maxSize?,
         ~minSize?,
